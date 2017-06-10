@@ -11,18 +11,16 @@ Unit Test is the first guard to prevent any regression. The good news is now we 
 Now ubuntu meet [docker issue](https://github.com/samuelli/bot-render/issues/2) but we could customize karma configure to add "--no-sandbox" as below
 
 ```json
-browsers: ['TessChromeHeadless'],
-    singleRun: true,
-    customLaunchers: {
-      TessChromeHeadless: {
-        base: 'ChromeHeadless',
-        flags: [
-          '--no-sandbox',
-          // See https://chromium.googlesource.com/chromium/src/+/lkgr/headless/README.md
-          '--headless',
-          '--disable-gpu',
-          // Without a remote debugging port, Google Chrome exits immediately.
-          ' --remote-debugging-port=9222',
+browsers: ["DockerChromeHeadless"],
+    "singleRun": true,
+    "customLaunchers": {
+      "DockerChromeHeadless": {
+        "base": "ChromeHeadless",
+        "flags": [
+          "--no-sandbox",
+          "--headless",
+          "--disable-gpu",
+          " --remote-debugging-port=9222",
         ]
       }
     }
